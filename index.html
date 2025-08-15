@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="logo.webp">
+  <title>Portfolio</title>
+  <meta name="description" content="Portfolio website of The Web wizards." />
+  <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+  <!-- Header / Nav -->
+  <header>
+    <div class="container">
+      <nav aria-label="Main">
+        <img id="logo" src="logo.webp" alt="logo">
+        <a href="#" class="brand">Web Wizard</a>
+        <ul>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <button id="theme-toggle" aria-label="Toggle light and dark theme">
+          <span id="theme-label">Dark</span> ⤢
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero container" id="home">
+    <h1>Web Designer crafting clean & usable interfaces</h1>
+    <p>
+      We design and build accessible, performant, and beautiful websites. Explore our work below.
+    </p>
+    <a class="btn" href="#work">See our work</a>
+  </section>
+
+  <!-- Work / Portfolio -->
+  <section id="work">
+    <div class="container">
+      <h2>Selected Work</h2>
+
+      <div class="grid">
+        <!-- Project Card -->
+        <article class="card">
+          <img src="projet1.png" alt="Project 1 preview" class="zoomable"/>
+          <div class="card-content">
+            <h3 class="card-title">Shop</h3>
+            <p class="card-desc">High quality shop, another satisfied customer</p>
+            <div class="tags">
+              <span class="tag">UI/UX</span>
+              <span class="tag">Responsive</span>
+              <span class="tag">Accessibility</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="projet2.png" alt="Project 2 preview" class="zoomable"/>
+          <div class="card-content">
+            <h3 class="card-title">Perfumery</h3>
+            <p class="card-desc">Aesthetic Perfumery, for fun project</p>
+            <div class="tags">
+              <span class="tag">Webflow</span>
+              <span class="tag">Branding</span>
+              <span class="tag">Interactive</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://picsum.photos/800/500?random=3" alt="Project 3 preview" class="zoomable"/>
+          <div class="card-content">
+          <h3 class="card-title">Coming soon...</h3>
+          <p class="card-desc">Highlight metrics, outcomes, or awards, if any.</p>
+          <div class="tags">
+            <span class="tag">Figma</span>
+            <span class="tag">Prototype</span>
+          </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+<div class="hover-overlay" id="hover-overlay">
+  <img id="hover-img" src="">
+</div>
+  <!-- About -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>
+        We are a web designing Team with years of experience focused on crafting user-centered digital experiences.
+        Our toolkit includes HTML/CSS/JAVASCRIPT, and design systems. We love shipping
+        beautiful interfaces that feel effortless to use.
+        Frontend/Backend.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <form action="https://formspree.io/f/mwpqwzqp" method="POST">
+        <label for="name">Name</label>
+        <input id="name" name="name" autocomplete="name" required />
+
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" autocomplete="email" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button class="btn" type="submit">Send Message</button>
+      </form>
+
+      <div class="socials" aria-label="Social links">
+        <a href="#" target="_blank" rel="noopener noreferrer">Twitter</a>
+        <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/webwizard753" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Web Wizards Corporations. All rights reserved.
+    </div>
+  </footer>
+  <script src="porftolio.js"></script>
+</body>
+</html>

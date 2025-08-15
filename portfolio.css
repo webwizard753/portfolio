@@ -1,0 +1,320 @@
+:root {
+      --bg: #ffffff;
+      --bg-elevated: #f5f5f7;
+      --text: #111111;
+      --text-muted: #555555;
+      --accent: #6366f1;
+      --border: #e5e7eb;
+      --shadow: 0 2px 8px rgba(0,0,0,.06);
+      --transition: 240ms ease;
+    }
+
+    .dark {
+      --bg: #0f1115;
+      --bg-elevated: #161a20;
+      --text: #f5f7fa;
+      --text-muted: #cbd5e1;
+      --accent: #818cf8;
+      --border: #1f242c;
+      --shadow: 0 2px 12px rgba(0,0,0,.25);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not(.light):not(.dark) {
+        color-scheme: dark;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      transition: background var(--transition), color var(--transition);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; }
+    }
+
+    /* Layout helpers */
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+      position: relative;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: saturate(180%) blur(10px);
+      background: color-mix(in srgb, var(--bg) 80%, transparent);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    nav a.brand {
+      font-weight: 700;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav ul a:hover,
+    nav ul a:focus {
+      color: var(--text);
+    }
+
+    button#theme-toggle {
+      border: 1px solid var(--border);
+      background: var(--bg-elevated);
+      box-shadow: var(--shadow);
+      color: var(--text);
+      border-radius: 9999px;
+      padding: 0.4rem 0.8rem;
+      cursor: pointer;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      transition: background var(--transition), color var(--transition), border-color var(--transition);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 6rem 0 4rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      line-height: 1.1;
+      margin: 0 0 1rem;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 0.5rem auto 2rem;
+      color: var(--text-muted);
+      font-size: 1.125rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.85rem 1.25rem;
+      border-radius: 0.75rem;
+      text-decoration: none;
+      background: var(--accent);
+      color: #fff;
+      box-shadow: var(--shadow);
+      transition: transform 160ms ease;
+      will-change: transform;
+    }
+    .btn:hover { transform: translateY(-1px); }
+
+    section {
+      padding: 4rem 0;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    /* Portfolio grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 160ms ease, box-shadow var(--transition);
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,.08);
+    }
+
+    .card img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 16/10;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 1rem 1.1rem 1.25rem;
+    }
+
+    .card-title {
+      margin: 0 0 0.5rem;
+      font-size: 1.125rem;
+    }
+
+    .card-desc {
+      margin: 0 0 0.75rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .35rem;
+      margin-top: .5rem;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 9999px;
+      padding: 0.15rem .6rem;
+      color: var(--text-muted);
+    }
+
+    /* About */
+    .about p {
+      max-width: 800px;
+      color: var(--text-muted);
+    }
+
+    /* Contact */
+    form {
+      max-width: 640px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin: 1rem 0 0.35rem;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.75rem 0.9rem;
+      border-radius: 0.5rem;
+      border: 1px solid var(--border);
+      background: var(--bg-elevated);
+      color: var(--text);
+      font: inherit;
+      transition: border-color var(--transition), background var(--transition);
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    footer {
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .socials {
+      margin: 1rem 0;
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+
+    .socials a {
+      color: var(--text-muted);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      background: var(--bg-elevated);
+      padding: 0.4rem 0.7rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      transition: background var(--transition), color var(--transition);
+    }
+
+    .socials a:hover {
+      color: var(--text);
+    }
+    #logo
+    {
+      width: 50px;
+      height: 50px;
+      display: inline-block;
+      border-radius: 25px;
+      position: absolute;
+    }
+    .brand
+    {
+      margin-left: 60px;
+    }
+    img:hover
+    {
+      width: 80%;
+      height: 80%;
+    }
+    .card img {
+  width: 100%;
+  cursor: pointer;
+}
+.hover-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  pointer-events: none; /* So hovering over overlay doesn't block grid */
+}
+
+.hover-overlay img {
+  max-width: 80%;
+  max-height: 80%;
+  transition: transform 0.3s ease;
+}
